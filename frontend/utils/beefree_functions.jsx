@@ -1,4 +1,4 @@
-import BeePlugin from '@mailupinc/bee-plugin'
+import BeePlugin from '@beefree.io/sdk'
 import { getSingleDesign } from './api_functions'
 import { beefree_config } from './beefree_configuration';
 

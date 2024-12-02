@@ -14,7 +14,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/server": "latest",
     "@emotion/styled": "^11.11.0",
-    "@mailupinc/bee-plugin": "^2.2.0",
+    "@beefree.io/sdk": "^6.0.0",
     "@mui/icons-material": "latest",
     "@mui/joy": "^5.0.0-alpha.88",
     "@mui/lab": "^5.0.0-alpha.117",
