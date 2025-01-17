@@ -66,7 +66,7 @@ const createTemplate = ({user, json, html, type, template_id}) => {
             .then(result => {
                 console.log("Template successfully created!")
                 console.log(result)
-                router.push(`/bee/${result.type}?template_id=${result.id}`)
+                router.push(`/beefree/${result.type}?template_id=${result.id}`)
             })
             .catch(error => console.error({error}));
     }

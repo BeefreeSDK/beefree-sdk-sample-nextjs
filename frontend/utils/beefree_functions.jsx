@@ -1,4 +1,4 @@
-import BeePlugin from '@mailupinc/bee-plugin'
+import BeePlugin from '@beefree.io/sdk'
 import { getSingleDesign } from './api_functions'
 import { beefree_config } from './beefree_configuration';
 
@@ -41,16 +41,16 @@ const startBEEFREE = ({user, type, template_id}) => {
         client_secret: getEnvVariable(type, "secretKey")
     };
 
+    let template_to_load = {};
+    if (template_id) {
+        getSingleDesign(template_id)
+            .then(res => template_to_load = res.json);
+    }
+
     beefreeEditor.getToken(token.client_id, token.client_secret)
         .then(async () => {
-            await beefreeEditor.start(beefreeConfig, {});
+            await beefreeEditor.start(beefreeConfig, template_to_load);
             BEEFREE = beefreeEditor;
-        })
-        .then(() => {
-            if (template_id) {
-                getSingleDesign(template_id)
-                    .then(res => beefreeEditor.load(JSON.parse(res.json)));
-            }
         })
 }
 
