@@ -1,7 +1,7 @@
 # beefree-sdk-nextjs
 This is a full-stack application built with NextJS, Python, and a SQLite database; allowing you to mimic a host app with your beefree SDK integrated. Feel free to hook up your own backend app if you'd like.
 
-View our docs at https://docs.beefree.io/initializing-bee-plugin.
+View our docs at https://docs.beefree.io/beefree-sdk.
 
 ***You must have Python (https://www.python.org/downloads/) and Node.js 16.8 (https://nodejs.org/en) or later installed on your computer.***
 
