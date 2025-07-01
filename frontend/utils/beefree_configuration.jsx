@@ -13,7 +13,6 @@ const saveAsTemplate = (filename, content) => {
 
 const beefree_config = ({user, type, template_id}) => {
     return {
-        uid: user.id, // DO NOT DELETE
         container: "bee-container", // DO NOT DELETE
         onSave: (json, html) => createTemplate({user, json, html, type, template_id}),
         onSend: (html) => saveAsTemplate("template.html", html),

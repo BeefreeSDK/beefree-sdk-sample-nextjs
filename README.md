@@ -18,9 +18,8 @@ The backend should now be running on http://localhost:8000/api/
 
 ## To initialize frontend
 1. in your terminal `cd frontend`
-2. create a `.env.local` file at the root of the `frontend` directory
-3. copy text from env_local_example.txt into your `.env.local` file
-4. set the environment variables in the `.env.local` file with the ClientIDs and SecretKeys in your Beefree SDK Dev portal: https://developers.beefree.io/subscriptions/
+2. `cp env_local_example.txt .env.local`
+3. set the environment variables in the `.env.local` file with the ClientIDs and SecretKeys in your Beefree SDK Dev portal: https://developers.beefree.io/subscriptions/
 
 ### After you have your environment variables set, start frontend
 run the following commands in your terminal (don't mind the warnings):
