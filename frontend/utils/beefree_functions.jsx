@@ -42,13 +42,7 @@ const startBEEFREE = ({user, type, template_id}) => {
     // setting SDK client-side configuration to an object
     const beefreeConfig = beefree_config({user, type, template_id})
 
-    const token_params = {
-        client_id: getEnvVariable(type, "clientId"),
-        client_secret: getEnvVariable(type, "secretKey"),
-        uid: user.id
-    };
-
-    fetchToken(token_params)
+    fetchToken(type, user)
         .then((token) => {
             const beefreeEditor = new BeefreeSDK(token); // setting variable to new SDK class from @beefree.io/sdk package
             beefreeEditor.start(beefreeConfig, template_to_load); // starting SDK
@@ -57,14 +51,14 @@ const startBEEFREE = ({user, type, template_id}) => {
 }
 
 // it is best to call https://auth.getbee.io/loginV2 server-side. this is currently implemented client-side for demo purposes
-const fetchToken = async (token_params) => {
+const fetchToken = async (type, user) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-      client_id: token_params.client_id,
-      client_secret: token_params.client_secret,
-      uid: token_params.uid,
+      client_id: getEnvVariable(type, "clientId"),
+      client_secret: getEnvVariable(type, "secretKey"),
+      uid: user.id
     });
 
     return await fetch("https://auth.getbee.io/loginV2", {
